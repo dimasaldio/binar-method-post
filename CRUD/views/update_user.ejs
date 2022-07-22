@@ -1,0 +1,57 @@
+<!-- include header -->
+<%-include('include/_header')%>
+<!-- /include header -->
+
+<!-- Main site -->
+<main id="site-main">
+    <div class="container">
+        <div class="box-navi d-flex-justify-between">
+            <div class="filter">
+                <a href="/"> <i class="fas fa-angle-double-left"></i> All User</a>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark">Update User</h2>
+                <span class="text-dark">Use below form to update account</span>
+            </div>
+        </div>
+        <!-- user form -->
+        <form method="post" id="update_user">
+            <div class="new_user">
+             <div class="mb-3">
+                 <label for="name" class="form-label">Full Name</label>
+                 <input type="hidden" name="id" value="<%=user._id%>">
+                 <input type="text" class="form-control" id="name" name="name" value="<%=user.name%>">
+               </div>
+             <div class="mb-3">
+                 <label for="email" class="form-label">Email address</label>
+                 <input type="email" class="form-control" id="email" name="email"value="<%=user.email%>">
+               </div>
+               <div class="mb-3">
+                 <label for="password" class="form-label">Password</label>
+                 <input type="password" class="form-control" id="password" name="password" value="<%=user.password%>">
+               </div>
+             </div>
+             <div class="mb-3">
+                 <label for="gender">Gender</label>
+                 <div class="form-check">
+                     <input class="form-check-input" type="radio" name="gender" value="Male" <%= user.gender =='Male' ? 'checked' : ''%> >
+                     <label class="form-check-label" for="gender">Male</label>
+                   </div>
+                   <div class="form-check">
+                     <input class="form-check-input" type="radio" name="gender" value="Female" <%= user.gender =='Female' ? 'checked' : ''%>>
+                     <label class="form-check-label" for="gender">Female</label>
+                   </div>
+                   <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+             </div>
+                   
+         </form>
+        <!-- end user form -->
+    </div>
+ </main>
+<!-- end main site -->
+
+<!-- include footer -->
+<%-include('include/_footer')%>
+<!-- /include footer -->
